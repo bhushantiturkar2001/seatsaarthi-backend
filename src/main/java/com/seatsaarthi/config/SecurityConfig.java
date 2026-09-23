@@ -73,12 +73,12 @@ public class SecurityConfig {
                 .requestMatchers("/error").permitAll()
 
                 // Public authentication & health endpoints
-                .requestMatchers("/api/v1/auth/**").permitAll()
+                .requestMatchers("/api/auth/**").permitAll()
 
                 // Public read-only lookups (Train schedule, PNR lookup, available swaps)
-                .requestMatchers(HttpMethod.GET, "/api/v1/trains/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/v1/bookings/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/v1/swaps/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/trains/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/bookings/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/swaps/**").permitAll()
 
                 // All other modifying actions (booking, creating swap proposal, executing swap) require authentication
                 .anyRequest().authenticated()
