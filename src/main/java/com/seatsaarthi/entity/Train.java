@@ -150,16 +150,14 @@ public class Train {
 	public boolean equals(Object o) {
 		if (this == o)
 			return true;
-		if (!(o instanceof Coach coach))
+		if (!(o instanceof Train train))
 			return false;
-		return Objects.equals(coachCode, coach.coachCode)
-				&& Objects.equals(train != null ? train.getTrainNumber() : null,
-						coach.train != null ? coach.train.getTrainNumber() : null);
+		return Objects.equals(trainNumber, train.trainNumber);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(coachCode, train != null ? train.getTrainNumber() : null);
+		return Objects.hash(trainNumber);
 	}
 
 }
